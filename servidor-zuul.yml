@@ -1,0 +1,22 @@
+spring:
+ server: 
+  port: 7000
+zuul:
+  routes:
+    serv-vuelos: 
+      path: /svuelos/**
+      service-id: servicio-vuelos  
+      #url: http://localhost:9000
+    serv-hoteles: 
+      path: /shoteles/**
+      service-id: servicio-hoteles  
+    serv-reservas: 
+      path: /sreservas/**
+      service-id: servicio-reservas  
+# Config de el servidor  
+eureka: 
+  client:
+    serviceUrl:
+      # Direccion a la que se conecta el microservicio con eureka
+      defaultZone: http://localhost:8761/eureka
+
